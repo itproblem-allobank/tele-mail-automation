@@ -1,9 +1,12 @@
 name: Run Email to Telegram Script
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: "* * * * *"  # setiap 30 menit
-  workflow_dispatch:  # bisa manual run
+    - cron: "* * * * *"
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -23,7 +26,7 @@ jobs:
 
       - name: Debug time
         run: date
-  
+
       - name: Run script
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
@@ -31,5 +34,4 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_IDS: ${{ secrets.CHAT_IDS }}
           FOLDER_NAME: ${{ secrets.FOLDER_NAME }}
-        run: |
-          python main.py
+        run: python main.py
