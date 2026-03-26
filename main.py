@@ -160,7 +160,7 @@ def check_email_and_send_inline_images():
                                     cid = src[4:]
                                     if cid in attachments:
                                         img_data = attachments[cid]
-                                        filename = f'image_{i}_cid.jpg'
+                                        filename = f'Daily_Report_{i}.jpg'
                                         filepath = os.path.join(SAVE_FOLDER, filename)
                                     else:
                                         print(f"CID {cid} tidak ditemukan.")
