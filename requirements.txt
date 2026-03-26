@@ -1,0 +1,7 @@
+imaplib2
+beautifulsoup4
+requests
+opencv-python-headless
+numpy
+pillow
+pytz
